@@ -2,6 +2,7 @@ package eu.turuga.javapizza.services;
 
 import eu.turuga.javapizza.dtos.OrderDTO;
 import eu.turuga.javapizza.dtos.PizzaDTO;
+import eu.turuga.javapizza.dtos.StatisticsOrderDTO;
 import eu.turuga.javapizza.dtos.StatisticsPizzaDTO;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-@Service
 public interface Statistics {
 
     default StatisticsPizzaDTO getMostOrderedPizza(Iterable<OrderDTO> orders){
@@ -54,4 +54,8 @@ public interface Statistics {
                         .build());
 
     }
+
+    StatisticsOrderDTO getAverageOrder();
+    StatisticsOrderDTO getMostExpensiveOrder();
+    StatisticsOrderDTO getCheapestOrder();
 }

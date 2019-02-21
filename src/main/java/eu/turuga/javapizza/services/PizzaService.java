@@ -6,7 +6,6 @@ import eu.turuga.javapizza.dtos.MenuDTO;
 import eu.turuga.javapizza.dtos.OrderDTO;
 import eu.turuga.javapizza.dtos.PizzaRequestDTO;
 import eu.turuga.javapizza.exceptions.OrderNotFoundException;
-import eu.turuga.javapizza.models.Ingredient;
 import eu.turuga.javapizza.models.Order;
 import eu.turuga.javapizza.models.Pizza;
 import eu.turuga.javapizza.repositories.IngredientsRepository;

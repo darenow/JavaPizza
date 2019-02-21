@@ -3,7 +3,6 @@ package eu.turuga.javapizza.controllers;
 import eu.turuga.javapizza.dtos.MenuDTO;
 import eu.turuga.javapizza.dtos.OrderDTO;
 import eu.turuga.javapizza.dtos.PizzaRequestDTO;
-import eu.turuga.javapizza.dtos.StatisticsPizzaDTO;
 import eu.turuga.javapizza.services.PizzaService;
 import eu.turuga.javapizza.services.Statistics;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,15 +41,5 @@ public class PizzaController {
 	@GetMapping(value = "/order/{orderId}")
 	public ResponseEntity<OrderDTO> getOrder(@PathVariable Integer orderId){
 		return new ResponseEntity<>(pizzaService.getOrder(orderId), HttpStatus.OK);
-	}
-
-	@GetMapping(value="/statistics/mostOrderedPizza")
-	public ResponseEntity<StatisticsPizzaDTO> getMostOrderedPizza(){
-		return new ResponseEntity<>(statistics.getMostOrderedPizza(pizzaService.getAllOrders()),HttpStatus.OK);
-	}
-
-	@GetMapping(value="/statistics/lessOrderedPizza")
-	public ResponseEntity<StatisticsPizzaDTO> getLessOrderedPizza(){
-		return new ResponseEntity<>(statistics.getLessOrderedPizza(pizzaService.getAllOrders()),HttpStatus.OK);
 	}
 }

@@ -6,8 +6,6 @@ import eu.turuga.javapizza.repositories.impl.IngredientsRepositoryImpl;
 import eu.turuga.javapizza.repositories.PizzaRepository;
 import eu.turuga.javapizza.repositories.impl.OrdersRepositoryImpl;
 import eu.turuga.javapizza.repositories.impl.PizzaRepositoryImpl;
-import eu.turuga.javapizza.services.Statistics;
-import eu.turuga.javapizza.services.StatisticsImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -31,8 +29,4 @@ public class PizzaConfiguration {
         return new OrdersRepositoryImpl();
     }
 
-    @Bean
-    public Statistics statistics(){
-        return new StatisticsImpl();
-    }
 }
